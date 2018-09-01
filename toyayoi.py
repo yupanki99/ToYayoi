@@ -1,5 +1,5 @@
-#!usr/bin/env python
-# coding: utf-8
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 #弥生会計取り込み用のデータを自動生成するPythonScript
 #Python 3.5.1
@@ -8,7 +8,6 @@ def excel_to_yayoi():
 
   import openpyxl
   import os
-
   #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
   #ファイル名を変数に代入
   for i in os.listdir():
@@ -76,7 +75,6 @@ def yayoi_to_csv():
 
   import openpyxl
   import os
-
   #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
   #ファイル名を変数に代入
   for i in os.listdir():
