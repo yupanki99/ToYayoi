@@ -54,37 +54,27 @@ def excel_to_yayoi():
                 nkingaku,
                 tekiyo,
                 0,
-                'no'
-                ]
+                'no']
         for n, v in zip(num, text):
-        ws_yayoi.cell(row=1, column=5).value =
-      # ws_yayoi.cell(row = i, column = 5).value = '普通預金'
-      # ws_yayoi.cell(row = i, column = 6).value = 'みずほ銀行虎ノ門'
-      # ws_yayoi.cell(row = i, column = 7).value = '全社'
-      # ws_yayoi.cell(row = i, column = 8).value = '対象外'
-      # ws_yayoi.cell(row = i, column = 9).value = nkingaku
-      # ws_yayoi.cell(row = i, column = 11).value = kamoku
-      # ws_yayoi.cell(row = i, column = 12).value = hojokamoku
-      # ws_yayoi.cell(row = i, column = 13).value = bumon
-      # ws_yayoi.cell(row = i, column = 14).value = '込'
-      # ws_yayoi.cell(row = i, column = 15).value = nkingaku
-      # ws_yayoi.cell(row = i, column = 17).value = tekiyo
-      # ws_yayoi.cell(row = i, column = 20).value = 0
-      # ws_yayoi.cell(row = i, column = 25).value = 'no'
+            ws_yayoi.cell(row=i, column=n).value = v
+
     elif nkingaku is None and skingaku is not None:#預金貸方
-      ws_yayoi.cell(row = i, column = 5).value = kamoku
-      ws_yayoi.cell(row = i, column = 6).value = hojokamoku
-      ws_yayoi.cell(row = i, column = 7).value = bumon
-      ws_yayoi.cell(row = i, column = 8).value = '込'
-      ws_yayoi.cell(row = i, column = 9).value = skingaku
-      ws_yayoi.cell(row = i, column = 11).value = '普通預金'
-      ws_yayoi.cell(row = i, column = 12).value = 'みずほ銀行虎ノ門'
-      ws_yayoi.cell(row = i, column = 13).value = '全社'
-      ws_yayoi.cell(row = i, column = 14).value = '対象外'
-      ws_yayoi.cell(row = i, column = 15).value = skingaku
-      ws_yayoi.cell(row = i, column = 17).value = tekiyo
-      ws_yayoi.cell(row = i, column = 20).value = 0
-      ws_yayoi.cell(row = i, column = 25).value = 'no'
+        num = [5,6,7,8,9,11,12,13,14,15,17,20,25]
+        text = [kamoku,
+                hojokamoku,
+                bumon,
+                '込',
+                skingaku,
+                '普通預金',
+                'みずほ銀行虎ノ門',
+                '全社',
+                '対象外',
+                skingaku,
+                tekiyo,
+                0,
+                'no']
+        for n, v in zip(num, text):
+            ws_yayoi.cell(row=i, column=n).value = v
 
   wb.save(filename = bookname)
 
