@@ -9,7 +9,6 @@ def excel_to_yayoi():
   import openpyxl
   import os
   #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
-  #ファイル名を変数に代入
   for i in os.listdir():
     if i.endswith('.xlsx'):
       bookname = i
