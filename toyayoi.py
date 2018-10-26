@@ -13,7 +13,6 @@ def excel_to_yayoi():
     if i.endswith('.xlsx'):
       bookname = i
 
-  #エクセルファイルを読み込み、弥生会計の必要な項目の変数に値を代入
   wb = openpyxl.load_workbook(bookname)
   sheetname = wb.get_sheet_names()[1] #2番めのシート名を取得
   sheetname2 = wb.get_sheet_names()[2] #3番めのシート名を取得
@@ -21,7 +20,7 @@ def excel_to_yayoi():
   ws_yayoi = wb.get_sheet_by_name(sheetname2) #3番めのシートのインスタンスを取得
   #wsからws_yayoiへデータを移行する
 
-  rows = ws.max_row #最大行
+  rows = ws.max_row
   columns = ws.max_column #最大列
 
   #変数へwsのデータを挿入
