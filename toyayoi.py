@@ -4,11 +4,14 @@
 #弥生会計取り込み用のデータを自動生成するPythonScript
 #Python 3.5.1
 
+import openpyxl
+import os
+import csv
+import codecs
+
 def excel_to_yayoi():
 
-  import openpyxl
-  import os
-  #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
+ #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
   for i in os.listdir():
     if i.endswith('.xlsx'):
       bookname = i
@@ -78,9 +81,6 @@ def excel_to_yayoi():
 
 def yayoi_to_csv():
 
-  import openpyxl
-  import os
-  #直下にエクセルファイルがあるかどうかの確認し、エクセルファイルがある場合に
   #ファイル名を変数に代入
   for i in os.listdir():
     if i.endswith('.xlsx'):
@@ -98,9 +98,6 @@ def yayoi_to_csv():
   columns = ws_yayoi.max_column #最大列
 
   #弥生会計形式のシートをcsv形式に変換
-  import csv
-  import codecs
-
   #弥生会計形式のシートをリストに変換
   body = [[ws_yayoi.cell(row = i, column = v).value for v in range(1, 26)]for i in range(3, ws.max_row + 1)]
 
